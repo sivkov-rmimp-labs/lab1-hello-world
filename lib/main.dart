@@ -47,9 +47,7 @@ class _MyHomePageState extends State<MyHomePage> {
               TextField(
                 decoration: const InputDecoration(labelText: 'Текст', hintText: 'Введите текст сюда'),
                 onChanged: (value) {
-                  setState(() {
-                    textFieldValue = value;
-                  });
+                  textFieldValue = value;
                 },
               ),
               MaterialButton(
@@ -61,12 +59,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 },
                 child: Text(textShown ? 'Скрыть' : 'Отобразить'),
               ),
-              if (textShown)
-                Text(
-                  textFieldValue.isNotEmpty
-                      ? 'Содержимое текстового поля: $textFieldValue'
-                      : 'Текстовое поле пусто. Введите в него текст!',
-                ),
+              Text(textShown ? textFieldValue : ''),
             ],
           ),
         ),
